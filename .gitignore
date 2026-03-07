@@ -1,0 +1,15 @@
+build/
+install/
+log/
+install_isolated/
+build_isolated/
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
