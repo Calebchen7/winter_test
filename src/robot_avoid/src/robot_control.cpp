@@ -19,10 +19,10 @@ public:
         obstacle_sub_ = this->create_subscription<std_msgs::msg::Bool>(
             "/obstacle_detected", 10, std::bind(&RobotControl::obstacle_callback, this, std::placeholders::_1));
         
-        // 100ms控制循环
+        //控制循环
         timer_ = this->create_wall_timer(100ms, std::bind(&RobotControl::control_loop, this));
         
-        // 设置终端为非 canonical 模式，捕获按键
+        // 设置终端
         tcgetattr(STDIN_FILENO, &old_tio_);
         termios new_tio = old_tio_;
         new_tio.c_lflag &= ~(ICANON | ECHO);
