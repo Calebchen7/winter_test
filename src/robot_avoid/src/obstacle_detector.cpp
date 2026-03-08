@@ -24,11 +24,14 @@ private:
     {
         std_msgs::msg::Bool obstacle_msg;
         bool has_obstacle = false;
-        float safe_distance = 0.5f; // 安全距离0.5米
+        // 安全距离0.5米
+        float safe_distance = 0.5f;
+        
         
         // 检测前方30度范围内的障碍
         int center_idx = msg->ranges.size() / 2;
-        int range = 15; // 左右各15个角度
+        // 左右各15个角度
+        int range = 15; 
         
         for (int i = center_idx - range; i <= center_idx + range; ++i)
         {
